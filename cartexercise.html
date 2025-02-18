@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+<body>
+    <div class="container">
+        Pizza: <button onclick="onep()">+1</button><button onclick="twop()">+2</button><button onclick="threep()">+3</button><br>
+        <button onclick="removep()">Remove Item</button><br>
+        Burger: <button onclick="oneb()">+1</button><button onclick="twob()">+2</button><button onclick="threeb()">+3</button><br>
+        <button onclick="removeb()">Remove Item</button><br>
+        Coffee: <button onclick="onec()">+1</button><button onclick="twoc()">+2</button><button onclick="threec()">+3</button><br>
+        <button onclick="removec()">Remove Item</button><br>
+        <button onclick="order()">Order!</button><br>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+        let cost = 0;
+        let Quantity = 0;
+        let bQuantity = 0;
+        let cQuantity = 0;
+        function onep(){
+            cost = cost + 2;
+            Quantity = Quantity + 1;
+            console.log(`Pizza Quantity: ${Quantity}. Your Total Price will be $${cost}`);
+        }
+        function twop(){
+            cost = cost + 4;
+            Quantity = Quantity + 2;
+            console.log(`Pizza Quantity: ${Quantity}. Your Total Price will be $${cost}`);
+        }
+        function threep(){
+            cost = cost + 6;
+            Quantity = Quantity + 3;
+            console.log(`Pizza Quantity: ${Quantity}. Your Total Price will be $${cost}`);
+        }
+        function oneb(){
+            cost = cost + 1;
+            bQuantity = bQuantity + 1;
+            console.log(`Burger Quantity: ${bQuantity}. Your Total Price will be $${cost}`);
+        }
+        function twob(){
+            cost = cost + 2;
+            bQuantity = bQuantity + 2;
+            console.log(`Burger Quantity: ${bQuantity}. Your Total Price will be $${cost}`);
+        }
+        function threeb(){
+            cost = cost + 3;
+            bQuantity = bQuantity + 3;
+            console.log(`Burger Quantity: ${bQuantity}. Your Total Price will be $${cost}`);
+        }
+        function onec(){
+            cost = cost + 3;
+            cQuantity = cQuantity  + 1;
+            console.log(`coffee Quantity: ${cQuantity}. Your Total Price will be $${cost}`);
+        }
+        function twoc(){
+            cost = cost + 6;
+            cQuantity = cQuantity  + 2;
+            console.log(`coffee Quantity: ${cQuantity}. Your Total Price will be $${cost}`);
+        }
+        function threec(){
+            cost = cost + 9;
+            cQuantity = cQuantity  + 3;
+            console.log(`coffee Quantity: ${cQuantity}. Your Total Price will be $${cost}`);
+        }
+        function removeb(){
+            bQuantity = bQuantity - 1;
+            cost = cost - 1;
+            console.log(`Total Quantity: ${bQuantity}. Your Total Price will be $${cost}`);
+        }
+        function removec(){
+            cQuantity = cQuantity - 1;
+            cost = cost - 3;
+            console.log(`Total Quantity: ${cQuantity}. Your Total Price will be $${cost}`);
+        }
+        function removep(){
+            Quantity = Quantity - 1;
+            cost = cost - 2;
+            console.log(`Total Quantity: ${Quantity}. Your Total Price will be $${cost}`);
+        }
+        function order(){
+            console.log(`Your Order has been placed Your total will be ${cost}`);
+        }
+        function reset(){
+            cost = 0;
+            Quantity = 0;
+            console.log(`You just Reset Your Order want to Order again! Now Your cost ${cost} And your Quantity ${Quantity} `);
+        }
+    </script>
+
+</body>
+</html>
