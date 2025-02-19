@@ -30,7 +30,7 @@
     <button onclick="equalto()">=</button>
     <button onclick="divide()">/</button>
     <script>
-        let number = 0;
+        let number = '';
         function seven(){
             number += '7';
             console.log(number)
@@ -47,8 +47,52 @@
             number += " + ";
             console.log(number);
         }
+        function four(){
+            number += '4';
+            console.log(number);
+        }
+        function five(){
+            number += '5';
+            console.log(number);
+        }
+        function six(){
+            number += '6';
+            console.log(number);
+        }
+        function minus(){
+            number += ' - ';
+            console.log(number);
+        }
+        function one(){
+            number += '1';
+            console.log(number);
+        }
+        function two(){
+            number += '2';
+            console.log(number);
+        }
+        function three(){
+            number += '3';
+            console.log(number);
+        }
+        function multi(){
+            number += ' * ';
+            console.log(number);
+        }
+        function divide(){
+            number += ' / ';
+            console.log(number);
+        }
+        function dot(){
+            number += '.';
+            console.log(number);
+        }
+        function zero(){
+            number += '0';
+            console.log(number);
+        }
         function equalto(){
-            number += eval(number);
+            number = eval(number);
             console.log(number);
         }
     </script>
