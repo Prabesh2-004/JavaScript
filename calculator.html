@@ -11,6 +11,10 @@
         width: 30px;
         margin: 2px;
     }
+    .clear{
+        height: 30px;
+        width: 50px;
+    }
 </style>
 <body>
     <button onclick="seven()">7</button>
@@ -28,7 +32,8 @@
     <button onclick="zero()">0</button>
     <button onclick="dot()">.</button>
     <button onclick="equalto()">=</button>
-    <button onclick="divide()">/</button>
+    <button onclick="divide()">/</button><br>
+    <button class="clear" onclick="clean()">Clear</button>
     <script>
         let number = '';
         function seven(){
@@ -94,6 +99,10 @@
         function equalto(){
             number = eval(number);
             console.log(number);
+        }
+        function clean(){
+            number = '';
+            console.log("Cleared.");
         }
     </script>
 </body>
