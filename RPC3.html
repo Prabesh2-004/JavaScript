@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInputNumber">
+    <button onclick="Show()">Result</button>
+    <p id="showUserInput"></p>
+    <script>
+        function Show(){
+            let answer = document.getElementById("userInputNumber").value;
+            let number = eval(answer);
+            document.getElementById("showUserInput").textContent = (`Result is ${number}`)
+
+        }
+    </script>
+</body>
+</html>
