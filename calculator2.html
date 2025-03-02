@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .display p{
+        height: 30px;
+        border: 2px solid black;
+        width: 250px;
+        font-size: large;
+        overflow: hidden;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    .operator{
+        background: rgb(255, 149, 0);
+    }
+    .display button{
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+        margin-bottom: 4px;
+        border-radius: 100%;
+    }
+</style>
+<body>
+    <div class="display">
+    <p id="Display"></p>
+    <button onclick="number('7')">7</button>
+    <button onclick="number('8')">8</button>
+    <button onclick="number('9')">9</button>
+    <button class="operator" onclick="operator('+')">+</button><br>
+    <button onclick="number('4')">4</button>
+    <button onclick="number('5')">5</button>
+    <button onclick="number('6')">6</button>
+    <button class="operator" onclick="operator('-')">-</button><br>
+    <button onclick="number('1')">1</button>
+    <button onclick="number('2')">2</button>
+    <button onclick="number('3')">3</button>
+    <button class="operator" onclick="operator('*')">*</button><br>
+    <button onclick="number('0')">0</button>
+    <button onclick="number('.')">.</button>
+    <button onclick="equalto()">=</button>
+    <button class="operator" onclick="operator('/')">/</button><br>
+    <button class="clear" onclick="clean()">Clear</button>
+    </div>
+    <script>
+        let display = document.getElementById("Display");
+        let expression = "";
+        function number(number){
+            expression += number;
+            display.innerText = expression;
+        }
+        function operator(operator){
+            expression += operator;
+            display.innerText = expression; 
+        }
+        function equalto(){
+            expression = eval(expression).toString();
+            display.textContent = expression;
+        }
+        function clean(){
+            expression = '';
+            display.textContent = '';
+        }
+    </script>
+</body>
+</html>

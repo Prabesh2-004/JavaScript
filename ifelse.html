@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="write">
+    <button onclick="hour()">Click</button>
+    <p id="display"></p>
+    <script>
+        let hour;
+        function hour(){
+        if(hour >= 6 && hour < 12){
+            hour = document.getElementById("write").value;
+            document.getElementById("display").textContent = (`Good Morning ${hour}`);
+        }
+    }
+    </script>
+</body>
+</html>
