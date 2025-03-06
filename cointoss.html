@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss</title>
+</head>
+<body>
+    <h3>Head and Tail</h3>
+    <p id="answer"></p>
+    <button onclick="playerMove('Head')">Head</button>
+    <button onclick="playerMove('Tail')">Tail</button>
+    <button onclick="reset()">Reset</button>
+    <p id="display"></p>
+    <p id="data"></p>
+    <script>
+        const display = document.getElementById("display");
+        const data = document.getElementById("data");
+        const answer = document.getElementById("answer");
+
+        function getComputerMove() {
+            return Math.random() < 0.5 ? 'Head' : 'Tail';
+        }
+
+        function getSystemMove() {
+            return Math.random() < 0.5 ? 'Head' : 'Tail';
+        }
+
+        function playerMove(play) {
+            const computerMove = getComputerMove();
+            const systemMove = getSystemMove();
+            let result = '';
+
+            if (play === systemMove && computerMove !== systemMove) {
+                result = 'you won';
+            } else if (play === systemMove && computerMove === systemMove || play !== systemMove && computerMove !== systemMove) {
+                result = 'it\'s a tie';
+            } else if (play !== systemMove && computerMove === systemMove) {
+                result = 'you lose';
+            }
+
+            answer.textContent = systemMove;
+            display.textContent = `You chose ${play} and Computer chose ${computerMove}. ${result}`;
+        }
+
+        function reset() {
+            answer.textContent = '';
+            display.textContent = '';
+        }
+    </script>
+</body>
+</html>

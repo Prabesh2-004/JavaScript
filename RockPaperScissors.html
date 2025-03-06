@@ -14,11 +14,12 @@
     <p id="display"></p>
     <p id="result"></p>
     <script>
-        const score = {
-                wins: 0,
-                looses: 0,
-                ties: 0,
-            };
+        let score = JSON.parse(localStorage.getItem('score'));
+        score = {
+            wins: 0,
+            looses: 0,
+            ties: 0,
+        }
         function getComputerMove() {
             const randomNumber = Math.random();
             if(randomNumber >= 0 && randomNumber < 1/3){
@@ -71,6 +72,7 @@
             }
             document.getElementById("rps").value;
             document.getElementById("result").textContent = (`wins: ${score.wins}, lost: ${score.looses}, tie: ${score.ties}`);
+            localStorage.setItem('score', JSON.stringify(score));
         }
         function reset(){
                 score.wins = 0;
